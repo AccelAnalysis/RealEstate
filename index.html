@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Accel Analysis for Real Estate &amp; Property Investors</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="How Accel Analysis supports real estate agents, brokers, and property investors with data-driven farm design, ownership intelligence, and targeted outreach." />
+
+  <style>
+    /* --- Base Reset & Typography --- */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #f6f7fb;
+      color: #1a1a1a;
+    }
+
+    body {
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* --- Layout --- */
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* --- Header & Navigation --- */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem 0;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .nav-logo {
+      height: 48px;
+      width: auto;
+    }
+
+    .nav-brand-text {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #555;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.92rem;
+    }
+
+    .nav-link {
+      position: relative;
+      padding-bottom: 0.1rem;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background: #005b8f;
+      transition: width 0.2s ease-out;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      border: 1px solid #005b8f;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #005b8f;
+      background: #ffffff;
+      transition: all 0.2s ease-out;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .nav-cta:hover {
+      background: #005b8f;
+      color: #ffffff;
+      box-shadow: 0 6px 18px rgba(0, 91, 143, 0.25);
+      transform: translateY(-1px);
+    }
+
+    /* --- Hero --- */
+    .hero {
+      position: relative;
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      color: #ffffff;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("https://img1.wsimg.com/isteam/ip/0815fdc9-aafc-4fe1-99f8-dedc9ba0e23b/blob-02576cc.png/:/rs=w:1440,h:1440");
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.35);
+      transform: scale(1.02);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 10% 0%, rgba(0, 171, 193, 0.5) 0, transparent 60%),
+                  linear-gradient(120deg, rgba(0, 91, 143, 0.9), rgba(10, 31, 58, 0.9));
+      mix-blend-mode: soft-light;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      padding: 4.5rem 0 4rem;
+    }
+
+    .hero-tagline {
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #d3e9ff;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      line-height: 1.15;
+      font-weight: 700;
+      margin: 0 0 1rem;
+    }
+
+    .hero-accent {
+      color: #66d1ff;
+    }
+
+    .hero-subtitle {
+      max-width: 560px;
+      font-size: 1.02rem;
+      color: #e9f3ff;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 0.3rem 0.85rem;
+      align-items: center;
+      margin-bottom: 1.75rem;
+      font-size: 0.9rem;
+      color: #c6ddff;
+    }
+
+    .hero-pill span {
+      position: relative;
+      padding-left: 1.3rem;
+    }
+
+    .hero-pill span::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: #66d1ff;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      align-items: center;
+    }
+
+    .btn-primary {
+      padding: 0.75rem 1.7rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #00a3e0, #0073b6);
+      color: #ffffff;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      box-shadow: 0 10px 22px rgba(0, 134, 204, 0.45);
+      transition: transform 0.15s ease-out, box-shadow 0.15s ease-out, filter 0.15s ease-out;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.05);
+      box-shadow: 0 14px 30px rgba(0, 134, 204, 0.6);
+    }
+
+    .btn-secondary {
+      padding: 0.75rem 1.5rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.08);
+      color: #e6f0ff;
+      font-weight: 500;
+      border: 1px solid rgba(230, 240, 255, 0.4);
+      cursor: pointer;
+      font-size: 0.9rem;
+      backdrop-filter: blur(8px);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      transition: background 0.15s ease-out, color 0.15s ease-out, transform 0.15s ease-out;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.16);
+      color: #ffffff;
+      transform: translateY(-1px);
+    }
+
+    /* --- Sections --- */
+    main {
+      background: #f6f7fb;
+    }
+
+    .section {
+      padding: 3.5rem 0;
+    }
+
+    .section.alt {
+      background: #ffffff;
+    }
+
+    .section-header {
+      margin-bottom: 2.25rem;
+      text-align: left;
+    }
+
+    .section-kicker {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #777;
+      margin-bottom: 0.35rem;
+    }
+
+    .section-title {
+      font-size: 1.7rem;
+      margin: 0 0 0.75rem;
+      color: #162235;
+    }
+
+    .section-subtitle {
+      max-width: 640px;
+      font-size: 0.98rem;
+      color: #555;
+    }
+
+    /* --- Image Containers --- */
+    .image-card {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid #b6c3d8;
+      background: #f0f4fb;
+    }
+
+    .image-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .image-caption {
+      padding: 0.6rem 0.9rem 0.8rem;
+      font-size: 0.82rem;
+      color: #4b5563;
+      background: #f9fbff;
+    }
+
+    /* --- Three-column grid --- */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.75rem;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 14px;
+      border: 1px solid rgba(13, 27, 62, 0.06);
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.04);
+      padding: 1.4rem 1.4rem 1.35rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+
+    .card-header-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #7c8baa;
+    }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #182235;
+    }
+
+    .card-body {
+      font-size: 0.92rem;
+      color: #555;
+    }
+
+    .card-list {
+      margin: 0.35rem 0 0;
+      padding-left: 1.1rem;
+      font-size: 0.9rem;
+      color: #4b566f;
+    }
+
+    .card-list li {
+      margin-bottom: 0.25rem;
+    }
+
+    /* --- Two-column feature sections --- */
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.9fr);
+      gap: 2.5rem;
+      align-items: flex-start;
+    }
+
+    .two-column.reverse {
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.15fr);
+    }
+
+    .feature-tag {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #0073b6;
+      margin-bottom: 0.3rem;
+    }
+
+    .feature-title {
+      font-size: 1.4rem;
+      color: #111827;
+      margin: 0 0 0.6rem;
+    }
+
+    .feature-subtitle {
+      font-size: 0.96rem;
+      color: #4b5563;
+      margin-bottom: 0.9rem;
+    }
+
+    .feature-list {
+      margin: 0.5rem 0 0.4rem;
+      padding-left: 1.1rem;
+      font-size: 0.93rem;
+      color: #4b5563;
+    }
+
+    .feature-list li {
+      margin-bottom: 0.25rem;
+    }
+
+    .feature-meta {
+      margin-top: 0.75rem;
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+
+    /* --- Process Steps --- */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.75rem;
+    }
+
+    .process-step {
+      background: #ffffff;
+      border-radius: 14px;
+      border: 1px solid rgba(13, 27, 62, 0.06);
+      padding: 1.3rem 1.3rem 1.2rem;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+      position: relative;
+    }
+
+    .process-step-number {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      background: #005b8f;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+
+    .process-step-title {
+      font-size: 1.02rem;
+      font-weight: 600;
+      margin-bottom: 0.45rem;
+      color: #111827;
+    }
+
+    .process-step-body {
+      font-size: 0.9rem;
+      color: #4b5563;
+    }
+
+    /* --- Use Cases --- */
+    .use-cases {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.75rem;
+    }
+
+    .use-case-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      color: #111827;
+    }
+
+    .pill-label {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.1rem 0.7rem;
+      border-radius: 999px;
+      background: #edf5ff;
+      color: #005b8f;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+    }
+
+    /* --- CTA --- */
+    .cta-section {
+      text-align: center;
+    }
+
+    .cta-box {
+      background: radial-gradient(circle at top left, #e6f5ff, #f8fafc);
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      padding: 2.2rem 1.75rem 2rem;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+    }
+
+    .cta-title {
+      font-size: 1.6rem;
+      margin-bottom: 0.7rem;
+      color: #0f172a;
+    }
+
+    .cta-subtitle {
+      max-width: 560px;
+      margin: 0 auto 1.7rem;
+      font-size: 0.97rem;
+      color: #4b5563;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.9rem;
+    }
+
+    .cta-note {
+      margin-top: 1.1rem;
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+
+    /* --- Footer --- */
+    footer {
+      border-top: 1px solid rgba(148, 163, 184, 0.35);
+      padding: 1.5rem 0 1.75rem;
+      background: #ffffff;
+      font-size: 0.82rem;
+      color: #6b7280;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.75rem;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    /* --- Responsive --- */
+    @media (max-width: 900px) {
+      .two-column,
+      .two-column.reverse,
+      .grid-3,
+      .process-steps,
+      .use-cases {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-inner {
+        padding: 3.5rem 0 3.25rem;
+      }
+
+      .nav-links {
+        display: none; /* simple mobile behavior */
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-title {
+        font-size: 1.9rem;
+      }
+
+      .hero-subtitle {
+        font-size: 0.97rem;
+      }
+
+      .cta-box {
+        padding: 1.9rem 1.4rem 1.7rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ================= Header ================= -->
+  <header class="site-header">
+    <div class="container nav">
+      <div class="nav-left">
+        <img
+          src="https://img1.wsimg.com/isteam/ip/0815fdc9-aafc-4fe1-99f8-dedc9ba0e23b/blob-f3ca1db.png/:/rs=w:331,h:400,cg:true,m/cr=w:331,h:400/qt=q:95"
+          alt="Accel Analysis, LLC Logo"
+          class="nav-logo"
+        />
+        <div class="nav-brand-text">
+          Accel Analysis, LLC<br />
+          <span style="font-weight:600;">Clarity. Strategy. Execution.</span>
+        </div>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#who-we-serve" class="nav-link">Who We Serve</a>
+        <a href="#farm-radar" class="nav-link">Farm &amp; Deal Radar</a>
+        <a href="#owner-mapping" class="nav-link">Ownership Intelligence</a>
+        <a href="#process" class="nav-link">How It Works</a>
+        <a href="#cta" class="nav-cta">Book a Discovery</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ================= Hero ================= -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-tagline">Industry Sector &mdash; Real Estate &amp; Property Investors</div>
+      <h1 class="hero-title">
+        Sharper Insight for
+        <span class="hero-accent">Agents, Brokers &amp; Property Investors</span>
+      </h1>
+      <p class="hero-subtitle">
+        Accel Analysis helps you define smart farms, map ownership and investor activity, and launch
+        targeted campaigns that turn local market data into consistent conversations and closings.
+      </p>
+
+      <div class="hero-pill">
+        <span>Farm smarter, not wider</span>
+        <span>Ownership &amp; investor intelligence at the parcel level</span>
+        <span>Hyper-targeted direct mail &amp; follow-up systems</span>
+      </div>
+
+      <div class="hero-actions">
+        <a
+          href="https://outlook.office.com/book/AccelAnalysis1%40NETORGFT15328873.onmicrosoft.com/s/Oru7j85iDEifvq8QNV5DjQ2?ismsaljsauthenabled="
+          class="btn-primary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Book a Discovery Meeting
+        </a>
+        <a href="#who-we-serve" class="btn-secondary">
+          Explore Real Estate Support
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <!-- ================= Section: Who We Serve ================= -->
+    <section class="section alt" id="who-we-serve">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Who We Serve</div>
+          <h2 class="section-title">Real Estate &amp; Investment Teams We Support</h2>
+          <p class="section-subtitle">
+            We focus on growth-minded professionals and firms that want to make better, faster decisions
+            about where to focus their energy, marketing, and capital.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="card-header-label">01</div>
+            <div class="card-title">Residential Agents &amp; Teams</div>
+            <div class="card-body">
+              For agents and small teams that want to move beyond generic farming and work a set of
+              geo-focused, data-backed micro-farms.
+              <ul class="card-list">
+                <li>Farm and sub-farm design by turnover, value, and owner profile</li>
+                <li>Hyper-targeted mailers with clear offers and QR tracking</li>
+                <li>Simple dashboards to see which farms are working</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header-label">02</div>
+            <div class="card-title">Boutique &amp; Independent Brokerages</div>
+            <div class="card-body">
+              Ideal for brokers who want to arm their agents with structured territories and systems
+              that create predictable listings and investor relationships.
+              <ul class="card-list">
+                <li>Territory carve-outs and listing opportunity heat maps</li>
+                <li>Owner &amp; investor lists across key submarkets</li>
+                <li>Team-level KPIs for outreach and conversions</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header-label">03</div>
+            <div class="card-title">Property Investors &amp; Small Portfolios</div>
+            <div class="card-body">
+              For investors who want better deal flow and a clearer picture of which neighborhoods,
+              property types, and owners offer the best fit.
+              <ul class="card-list">
+                <li>Market scans by asset type and price band</li>
+                <li>Owner contact lists for off-market outreach</li>
+                <li>Deal pipeline snapshots and follow-up systems</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mock Image: City skyline / neighborhood -->
+        <div class="image-card" style="margin-top:1.75rem;">
+          <img
+            src="https://via.placeholder.com/1120x520?text=City+Neighborhood+Map+Mock"
+            alt="Neighborhood-level real estate farming map mock"
+          />
+          <div class="image-caption">
+            Mock image &mdash; replace with a branded neighborhood or market map showing highlighted farms or submarkets.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Section: Core Value Props ================= -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Why Real Estate Partners Choose Accel</div>
+          <h2 class="section-title">Clarity on Where the Listings and Deals Actually Are</h2>
+          <p class="section-subtitle">
+            We bring together public data, local insight, and geospatial tools to show you where to farm,
+            which owners and investors to prioritize, and how to communicate in a way that feels
+            intentional &mdash; not spammy.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card">
+            <div class="card-title">Farm &amp; Deal Radar&#8482;</div>
+            <div class="card-body">
+              A structured view of your highest-potential neighborhoods and property types, based on
+              turnover, values, and trends.
+              <ul class="card-list">
+                <li>Identify and rank farms by listing and deal potential</li>
+                <li>Overlay ownership, income, and property characteristics</li>
+                <li>Design mail and outreach waves aligned to those priorities</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Ownership &amp; Investor Intelligence&#8482;</div>
+            <div class="card-body">
+              Parcel-level intelligence on who owns what, where they live, and how that lines up
+              with your strategy.
+              <ul class="card-list">
+                <li>Owner and investor lists by county, zip, or micro-market</li>
+                <li>Out-of-area and multi-property owner targeting</li>
+                <li>Investor segmentation by profile and strategy fit</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-title">Targeted Outreach &amp; Tracking</div>
+            <div class="card-body">
+              Direct mail, plus light digital touchpoints, that connect your insights to a clear ask:
+              talk, explore, or transact.
+              <ul class="card-list">
+                <li>Invitation-style postcards and letters with QR codes</li>
+                <li>Landing pages for sellers, buyers, and investors</li>
+                <li>Simple measurement of response and conversion by farm</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mock Image: Analytics view -->
+        <div class="image-card" style="margin-top:1.75rem;">
+          <img
+            src="https://via.placeholder.com/1120x520?text=Real+Estate+Analytics+Dashboard+Mock"
+            alt="Real estate analytics dashboard mock"
+          />
+          <div class="image-caption">
+            Mock image &mdash; replace with a dashboard view showing farm performance, listing pipeline, and outreach metrics.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Section: Farm & Deal Radar ================= -->
+    <section class="section alt" id="farm-radar">
+      <div class="container two-column">
+        <div>
+          <div class="feature-tag">Service Pillar</div>
+          <h2 class="feature-title">Farm &amp; Deal Radar&#8482;</h2>
+          <p class="feature-subtitle">
+            Move beyond “we sent mail to this zip code.” Farm &amp; Deal Radar gives you a structured way
+            to define, compare, and work a set of micro-farms that actually match your goals.
+          </p>
+
+          <ul class="feature-list">
+            <li><strong>Smart Farm Design:</strong> We help you define farms using turnover, price bands, property age, and owner profiles.</li>
+            <li><strong>Micro-Farm Priorities:</strong> Each farm is scored and tiered, so you know where to go deeper and where to simply monitor.</li>
+            <li><strong>Time-Phased Campaigns:</strong> Outreach waves that align with seasonality, inventory cycles, and your capacity.</li>
+            <li><strong>Performance Feedback:</strong> Tracking that tells you which farms are producing conversations, listings, and deals.</li>
+          </ul>
+
+          <p class="feature-meta">
+            Deliverable: a farm playbook that shows where to focus, how often to touch, and what to
+            measure for both short-term listings and long-term positioning.
+          </p>
+        </div>
+
+        <div>
+          <div class="image-card">
+            <img
+              src="https://via.placeholder.com/800x450?text=Farm+Heatmap+Mock"
+              alt="Real estate farm heatmap mock"
+            />
+            <div class="image-caption">
+              Mock image &mdash; replace with a heat map showing “A/B/C” farms in different neighborhoods based on listing potential.
+            </div>
+          </div>
+
+          <div class="image-card" style="margin-top:1.25rem;">
+            <img
+              src="https://via.placeholder.com/800x450?text=Farm+Playbook+Mock"
+              alt="Farm playbook document mock"
+            />
+            <div class="image-caption">
+              Mock image &mdash; replace with a farm playbook or strategy one-pager showing key stats and recommended cadences.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Section: Ownership & Investor Mapping ================= -->
+    <section class="section" id="owner-mapping">
+      <div class="container two-column reverse">
+        <div>
+          <div class="image-card">
+            <img
+              src="https://via.placeholder.com/800x450?text=Owner+List+Mock"
+              alt="Property owner list mock"
+            />
+            <div class="image-caption">
+              Mock image &mdash; replace with a sample owner or investor list view including owner name, mailing address, property address, and tags.
+            </div>
+          </div>
+
+          <div class="image-card" style="margin-top:1.25rem;">
+            <img
+              src="https://via.placeholder.com/800x450?text=Portfolio+Map+Mock"
+              alt="Investor portfolio map mock"
+            />
+            <div class="image-caption">
+              Mock image &mdash; replace with a map showing clustered pins for a small investor’s portfolio and nearby target properties.
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="feature-tag">Service Pillar</div>
+          <h2 class="feature-title">Ownership &amp; Investor Intelligence&#8482;</h2>
+          <p class="feature-subtitle">
+            Knowing the property is one thing. Knowing the person behind it is what unlocks off-market
+            opportunities, repeat deals, and focused conversations.
+          </p>
+
+          <ul class="feature-list">
+            <li><strong>Owner &amp; Investor Lists:</strong> We compile and structure who owns what, where, across your chosen markets.</li>
+            <li><strong>Profile &amp; Tagging:</strong> Segment owners as owner-occupants, out-of-area owners, multi-property owners, and investors.</li>
+            <li><strong>Strategic Filters:</strong> Apply filters based on property type, equity proxies, duration of ownership, and more.</li>
+            <li><strong>Outreach Ready:</strong> Deliver lists and simple tools ready for mailers, calls, and digital follow-up &mdash; not just a spreadsheet.</li>
+          </ul>
+
+          <p class="feature-meta">
+            Result: a clearer picture of your local ownership and investor landscape, and a way to
+            intentionally build relationships with the people that fit your business.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Section: How It Works ================= -->
+    <section class="section alt" id="process">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">How Engagements Work</div>
+          <h2 class="section-title">A Simple Process, Built Around Your Market</h2>
+          <p class="section-subtitle">
+            We meet you where you are &mdash; whether that’s one agent wanting a sharper farm, or a
+            brokerage or investor needing a more systematic view of your markets and relationships.
+          </p>
+        </div>
+
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="process-step-number">1</div>
+            <div class="process-step-title">Clarify Strategy &amp; Markets</div>
+            <div class="process-step-body">
+              We define your target markets, property types, ideal clients, and constraints. The goal is a
+              clear picture of where you want to grow and what “wins” look like.
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="process-step-number">2</div>
+            <div class="process-step-title">Build Farms &amp; Intelligence</div>
+            <div class="process-step-body">
+              We design farms, run market scans, map ownership and investors, and build the structures
+              (lists, maps, dashboards) you’ll use to guide action.
+            </div>
+          </div>
+
+          <div class="process-step">
+            <div class="process-step-number">3</div>
+            <div class="process-step-title">Launch Outreach &amp; Iterate</div>
+            <div class="process-step-body">
+              We support targeted mail and follow-up campaigns, then help you interpret results and
+              adjust farms or priorities as your pipeline and capacity evolve.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Section: Use Cases ================= -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-kicker">Real-World Scenarios</div>
+          <h2 class="section-title">Where This Creates Immediate Value</h2>
+          <p class="section-subtitle">
+            These are a few of the ways real estate professionals and investors use Accel’s support to
+            sharpen focus, improve conversations, and increase their return on effort.
+          </p>
+        </div>
+
+        <div class="use-cases">
+          <div>
+            <div class="pill-label">For Agents &amp; Teams</div>
+            <h3 class="use-case-title">From “Spray and Pray” to Smart, Measurable Farming</h3>
+            <ul class="feature-list">
+              <li>Refine or redesign farms to match where listings are most likely to come from.</li>
+              <li>Coordinate mailers, digital touchpoints, and in-person presence in those farms.</li>
+              <li>Use simple metrics to see which farms deserve more of your time and budget.</li>
+              <li>Build a repeatable system you can hand to assistants or new team members.</li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="pill-label">For Investors &amp; Portfolios</div>
+            <h3 class="use-case-title">Better Deal Flow and Owner Conversations</h3>
+            <ul class="feature-list">
+              <li>Identify clusters of properties and owners that align with your buy box.</li>
+              <li>Target owners and investors who are most likely to respond to an offer or conversation.</li>
+              <li>Track which neighborhoods and strategies are actually producing deals.</li>
+              <li>Use maps and dashboards to communicate clearly with lenders and partners.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="image-card" style="margin-top:1.75rem;">
+          <img
+            src="https://via.placeholder.com/1120x520?text=Agent+and+Investor+Collage+Mock"
+            alt="Agents and investors collaborating collage mock"
+          />
+          <div class="image-caption">
+            Mock image &mdash; replace with a collage showing an agent reviewing a farm map, a small group of investors reviewing deals, and a city/market backdrop.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Section: CTA ================= -->
+    <section class="section cta-section" id="cta">
+      <div class="container">
+        <div class="cta-box">
+          <h2 class="cta-title">Ready to See Your Market with More Precision?</h2>
+          <p class="cta-subtitle">
+            Whether you want to tighten your farms, map ownership and investor opportunities, or build a
+            more predictable pipeline, Accel Analysis can help you turn data into targeted action.
+          </p>
+
+          <div class="cta-actions">
+            <a
+              href="https://outlook.office.com/book/AccelAnalysis1%40NETORGFT15328873.onmicrosoft.com/s/Oru7j85iDEifvq8QNV5DjQ2?ismsaljsauthenabled="
+              class="btn-primary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Book a Discovery Meeting
+            </a>
+            <a
+              href="https://accelanalysis.com/contact-us"
+              class="btn-secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Contact Accel Analysis
+            </a>
+          </div>
+
+          <div class="cta-note">
+            Not sure where to start? We can begin with a focused farm or owner scan and build outward
+            as the strategy takes shape.
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        &copy; <span id="year"></span> Accel Analysis, LLC. All rights reserved.
+      </div>
+      <div class="footer-links">
+        <a href="https://accelanalysis.com" target="_blank" rel="noopener noreferrer">AccelAnalysis.com</a>
+        <a href="https://accelanalysis.com/services-overview" target="_blank" rel="noopener noreferrer">Services Overview</a>
+        <a href="https://accelanalysis.com/contact-us" target="_blank" rel="noopener noreferrer">Contact Us</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
